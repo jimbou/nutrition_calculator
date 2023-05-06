@@ -72,32 +72,48 @@ def calculate_bmr(gender, stats):
 def calculate_caloric_needs(bmr, activity):
     if activity[0] == 1:
         caloric_needs = round(bmr * 1.2)
-        print(
-            f"\nΗ ημερήσια ανάγκη σου σε θερμίδες για να διατηρήσεις το βάρος σου είναι {caloric_needs} θερμίδες.")
+       
 
     elif activity[0] == 2:
         caloric_needs = round(bmr * 1.365)
-        print(
-            f"\nΗ ημερήσια ανάγκη σου σε θερμίδες για να διατηρήσεις το βάρος σου είναι {caloric_needs} θερμίδες.")
+        
 
     elif activity[0] == 3:
         caloric_needs = round(bmr * 1.50)
-        print(
-            f"\nΗ ημερήσια ανάγκη σου σε θερμίδες για να διατηρήσεις το βάρος σου είναι {caloric_needs} θερμίδες.")
+        
 
     elif activity[0] == 4:
         caloric_needs = round(bmr * 1.705)
-        print(
-            f"\nΗ ημερήσια ανάγκη σου σε θερμίδες για να διατηρήσεις το βάρος σου είναι {caloric_needs} θερμίδες.")
+        
 
     elif activity[0] == 5:
         caloric_needs = round(bmr * 1.9)
-        print(
-            f"\nΗ ημερήσια ανάγκη σου σε θερμίδες για να διατηρήσεις το βάρος σου είναι {caloric_needs} θερμίδες.")
+        
     else :
         caloric_needs = round(bmr * 1.2 + activity[1])
-        print(
-            f"\nΗ ημερήσια ανάγκη σου σε θερμίδες για να διατηρήσεις το βάρος σου είναι {caloric_needs} θερμίδες.")
+        
+    lose_25 = caloric_needs-250
+    lose_50 = caloric_needs-500
+    lose_75 = caloric_needs-750
+    lose_1 = caloric_needs -1000
+    gain_25 = caloric_needs+250
+    gain_50 = caloric_needs+500
+    gain_75 = caloric_needs+750
+    gain_1 = caloric_needs +1000
+
+
+    print(
+            f"""\nΗ ημερήσια ανάγκη σου σε θερμίδες για να:
+                                          διατηρήσεις το βάρος σου είναι {caloric_needs} θερμίδες
+                                          χάνεις 250 γραμμάρια την βδομάδα ,είναι {lose_25} θερμίδες
+                                          χάνεις 500 γραμμάρια την βδομάδα ,είναι {lose_50} θερμίδες
+                                          χάνεις 750 γραμμάρια την βδομάδα ,είναι {lose_75} θερμίδες
+                                          χάνεις 1 κιλό την βδομάδα ,είναι {lose_1} θερμίδες
+                                          παίρνεις 250 γραμμάρια την βδομάδα ,είναι {gain_25} θερμίδες
+                                          παίρνεις 500 γραμμάρια την βδομάδα ,είναι {gain_50} θερμίδες
+                                          παίρνεις 750 γραμμάρια την βδομάδα ,είναι {gain_75} θερμίδες
+                                          παίρνεις 1 κιλό την βδομάδα ,είναι {gain_1} θερμίδες """)
+   
 
 
 
@@ -114,6 +130,4 @@ def run_calculator():
     bmr = calculate_bmr(gender, stats)
 
     calculate_caloric_needs(bmr, activity)
-    return
-
-
+    return 0
