@@ -4,10 +4,10 @@ def run():
     meal =["πρωινό","σνακ","μεσημεριανό","απογευματινό","βραδινό"]
     for i in range(4):
         remaining_percentage = 100 - sum(meal_percentages)
-        meal_percentage = float(input(f"Δώσε το ποσοστό θερμίσων που θες να καταναλώσεις στο γευμα {meal[i]} (Σου απομένει  {remaining_percentage}% ): "))
+        meal_percentage = float(input(f"Δώσε το ποσοστό θερμίσων που θες να καταναλώσεις στο γευμα : {meal[i]} (Σου απομένει  {remaining_percentage}% ): "))
         while meal_percentage > remaining_percentage:
             print(f"Σφαλμα: το άθροισμα των ποσοστών θερμιδών ξεπερνά το  100%. Σου απομένει {remaining_percentage}% .")
-            meal_percentage = float(input(f"Δώσε το ποσοστό θερμίσων που θες να καταναλώσεις στο γευμα {meal[i]} (Σου απομένει  {remaining_percentage}% ): "))
+            meal_percentage = float(input(f"Δώσε το ποσοστό θερμίσων που θες να καταναλώσεις στο γευμα :{meal[i]} (Σου απομένει  {remaining_percentage}% ): "))
         meal_percentages[i] = meal_percentage
 
     remaining_percentage = 100 - sum(meal_percentages)
