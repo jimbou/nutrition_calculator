@@ -68,6 +68,10 @@ def calculate_bmr(gender, stats):
         bmr = 655 + (4.3 * stats[0]) + (4.7 * stats[1]) - (4.7 * stats[2])
         return bmr
 
+def calculate_bmi(height, weight):
+  BMI = weight / (height/100)**2
+  return BMI
+
 
 def calculate_caloric_needs(bmr, activity):
     if activity[0] == 1:
@@ -123,10 +127,13 @@ def run_calculator():
     gender = input_gender()
     stats = input_stats()
     activity = input_activity()
+    bmi =round(calculate_bmi(stats[4],stats[3]),2)
     filo = "Άνδρας" if gender == "male" else "Γυναίκα"
     
     print(
             f"\n{filo}, {stats[2]} ετών, υψους {stats[4]} εκτοστών , βάρους {stats[3]} κιλών , με βαθμίδα άσκησης {activity[0]}")
+    print(
+            f"\nTo BMI σας είναι: {bmi} ")
     bmr = calculate_bmr(gender, stats)
 
     calculate_caloric_needs(bmr, activity)
