@@ -114,6 +114,6 @@ def run_calculator():
     bmr = calculate_bmr(gender, stats)
 
     calculate_caloric_needs(bmr, activity)
+    return
 
 
-run_calculator()
