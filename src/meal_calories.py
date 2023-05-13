@@ -1,3 +1,4 @@
+import find_meals.py
 def input_type():
     while True:
         result = str(input("\n Θες ποσοτά ή αριθμό θερμιδών ; ")).lower()
