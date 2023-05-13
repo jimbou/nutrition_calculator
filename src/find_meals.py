@@ -56,16 +56,16 @@ def find_foods(meals,calorie_goal,foods_not_liked):
         elif meal:
           if  meal["unit"]:
               meal["calories"]=round(meal['calories'] * meal['amount'])
-              print(f"Πρέπει να τρώς  {meal['amount']}  {meal['name']} για {meal['calories']}  θερμίδες.")
+              print(f"Πρέπει να τρώς  {meal['amount']}  {meal['name']} για {meal['calories']}  θερμίδες.\n")
               final_foods.append(meal)
               
               break #gia na dialegei mono ena fagito
           else:
               meal['amount']= round(amount*100)
               meal["calories"]=round(meal['calories'] * amount)
-              print(f"Πρέπει να τρώς  {meal['amount']} γραμμάρια {meal['name']} για {meal['calories']} θερμίδες.")
+              print(f"Πρέπει να τρώς  {meal['amount']} γραμμάρια {meal['name']} για {meal['calories']} θερμίδες.\n")
               final_foods.append(meal)
-              print (meal)
+              #print (meal)
               break #gia na dialegei mono ena fagito
               
 

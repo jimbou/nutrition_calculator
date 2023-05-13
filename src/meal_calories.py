@@ -66,17 +66,17 @@ def run():
         meals_calories = run_cal()
     foods_not_liked = input("Enter any foods you don't like, separated by commas: ").lower().split(",")
     if meals_calories[0]!=0 :
-        print("Πρωινό : \n")
+        print("Πρωινό : ")
         food_finder(meals_calories[0],foods_not_liked, "foods") #replace foods with breakfast
     if meals_calories[1]!=0 :
-        print("Δεκατιανό : \n")
+        print("Δεκατιανό : ")
         food_finder(meals_calories[1], foods_not_liked,"foods")#replace foods with snack 1
     if meals_calories[2]!=0 :
-        print("Μεσημεριανό : \n")
+        print("Μεσημεριανό : ")
         food_finder(meals_calories[2], foods_not_liked,"foods") #replace foods with lunch
     if meals_calories[3]!=0 :
-        print("Απογευματινό : \n")
+        print("Απογευματινό : ")
         food_finder(meals_calories[3], foods_not_liked,"foods") #replace snack 2 with breakfast
     if meals_calories[4]!=0 :
-        print("Βραδινό : \n")
+        print("Βραδινό : ")
         food_finder(meals_calories[4], foods_not_liked,"foods") #replace foods with dinner
