@@ -32,6 +32,7 @@ def run_perc():
 
     meal_calories = [int(total_calories * p / 100) for p in meal_percentages]  # Calculate the number of calories for each meal
     print(meal_calories)
+    return (meal_calories)
 
 def run_cal():
 
@@ -52,11 +53,29 @@ def run_cal():
 
    
     print(meal_calories)
+    return (meal_calories)
 
 
 def run():
     result = input_type() 
+    
     if result == "percentage":
-        run_perc()
+        meals_calories = run_perc()
     else :
-        run_cal()
+        meals_calories = run_cal()
+    foods_not_liked = input("Enter any foods you don't like, separated by commas: ").lower().split(",")
+    if meals_calories[0]!=0 :
+        print("Πρωινό : \n")
+        food_finder(meals_calories[0],foods_not_liked, "foods") #replace foods with breakfast
+    if meals_calories[1]!=0 :
+        print("Δεκατιανό : \n")
+        food_finder(meals_calories[1], foods_not_liked,"foods")#replace foods with snack 1
+    if meals_calories[2]!=0 :
+        print("Μεσημεριανό : \n")
+        food_finder(meals_calories[2], foods_not_liked,"foods") #replace foods with lunch
+    if meals_calories[3]!=0 :
+        print("Απογευματινό : \n")
+        food_finder(meals_calories[3], foods_not_liked,"foods") #replace snack 2 with breakfast
+    if meals_calories[4]!=0 :
+        print("Βραδινό : \n")
+        food_finder(meals_calories[4], foods_not_liked,"foods") #replace foods with dinner

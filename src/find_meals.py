@@ -18,9 +18,9 @@ def import_foods():
     
 
 
-def find_foods(meals):
-    calorie_goal = int(input("Enter your calorie goal: "))
-    foods_not_liked = input("Enter any foods you don't like, separated by commas: ").lower().split(",")
+def find_foods(meals,calorie_goal,foods_not_liked):
+    #calorie_goal = int(input("Enter your calorie goal: "))
+    #foods_not_liked = input("Enter any foods you don't like, separated by commas: ").lower().split(",")
     
     # Filter meals to exclude foods the user doesn't like
     meals_filtered = {k: v for k, v in meals.items() if not any(food.lower() in v["ingredients"] for food in foods_not_liked)}
@@ -67,5 +67,8 @@ def find_foods(meals):
     print(final_foods)
 # Print the meal and amount
 
-def run():
-  find_foods(import_foods())
+def food_finder(calorie_goal):
+    #//calorie_goal = int(input("Enter your calorie goal: "))
+    foods_not_liked = input("Enter any foods you don't like, separated by commas: ").lower().split(",")
+    
+    find_foods(import_foods(),calorie_goal,foods_not_liked)
