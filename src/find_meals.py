@@ -2,8 +2,8 @@ import openpyxl
 import random
 
 # Read meals from Excel file
-def import_foods():
-    workbook = openpyxl.load_workbook("/content/nutrition_calculator/foods.xlsx")
+def import_foods(food_file):
+    workbook = openpyxl.load_workbook("/content/nutrition_calculator/"+food_file+".xlsx")
     worksheet = workbook["Lunch"]
     meals = {}
     for row in worksheet.iter_rows(min_row=2, values_only=True):
@@ -12,7 +12,7 @@ def import_foods():
         calories = row[2]
         unit = True if row[3]==1 else False
         meals[name] = {"name": name, "calories": calories, "ingredients": ingredients, "unit": unit}
-    print(meals) 
+    #print(meals) 
     return meals
     # Define the user's calorie goal and foods they don't like
     
@@ -58,17 +58,22 @@ def find_foods(meals,calorie_goal,foods_not_liked):
               meal["calories"]=round(meal['calories'] * meal['amount'])
               print(f"Πρέπει να τρώς  {meal['amount']}  {meal['name']} για {meal['calories']}  θερμίδες.")
               final_foods.append(meal)
+              
+              break #gia na dialegei mono ena fagito
           else:
               meal['amount']= round(amount*100)
               meal["calories"]=round(meal['calories'] * amount)
               print(f"Πρέπει να τρώς  {meal['amount']} γραμμάρια {meal['name']} για {meal['calories']} θερμίδες.")
               final_foods.append(meal)
+              print (meal)
+              break #gia na dialegei mono ena fagito
+              
 
-    print(final_foods)
+    #print(final_foods) #ama dialegei mono ena fagito
 # Print the meal and amount
 
-def food_finder(calorie_goal):
+def food_finder(calorie_goal,foods_not_liked, food_file):
     #//calorie_goal = int(input("Enter your calorie goal: "))
-    foods_not_liked = input("Enter any foods you don't like, separated by commas: ").lower().split(",")
     
-    find_foods(import_foods(),calorie_goal,foods_not_liked)
+    
+    find_foods(import_foods(food_file),calorie_goal,foods_not_liked)
