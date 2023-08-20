@@ -183,5 +183,5 @@ def food_finder(calorie_goal,foods_not_liked, food_file, food_type):
     
     food_type = choose_food_type()
     for key, value in food_type.items():
-        find_foods(import_foods(food_file, food_type),calorie_goal,foods_not_liked,num_meals)
+        find_foods(import_foods(food_file, key),calorie_goal,foods_not_liked,value)
 
