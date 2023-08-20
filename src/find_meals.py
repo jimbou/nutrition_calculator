@@ -15,85 +15,85 @@ def choose_food_type():
     food_type["chicken"] =chicken
     rem -= chicken
     if (rem < 0 ):
-    print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
+        sys.exit()
     else :
-    print (f"Σας απομενουν {rem} γευματα ")
-    beef = int(input("\nΜοσχαρι: "))
-    food_type["beef"] =beef
-    rem -= beef
+        print (f"Σας απομενουν {rem} γευματα ")
+        beef = int(input("\nΜοσχαρι: "))
+        food_type["beef"] =beef
+        rem -= beef
     if (rem < 0 ):
-    print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
+        sys.exit()
     else :
-    print (f"Σας απομενουν {rem} γευματα ")
-    pasta = int(input("\nΜακαρονια: "))
-    food_type["pasta"] =pasta
-    rem -= pasta
+        print (f"Σας απομενουν {rem} γευματα ")
+        pasta = int(input("\nΜακαρονια: "))
+        food_type["pasta"] =pasta
+        rem -= pasta
     if (rem < 0 ):
-    print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
+        sys.exit()
     else :
-    print (f"Σας απομενουν {rem} γευματα ")
-    selfish = int(input("\nΟστρακοειδή: "))
-    food_type["selfish"] =selfish
-    rem -= selfish
+        print (f"Σας απομενουν {rem} γευματα ")
+        selfish = int(input("\nΟστρακοειδή: "))
+        food_type["selfish"] =selfish
+        rem -= selfish
     if (rem < 0 ):
-    print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
+        sys.exit()
     else :
-    print (f"Σας απομενουν {rem} γευματα ")
-    eggs = int(input("\nAυγα: "))
-    food_type["eggs"] =eggs
-    rem -= eggs
+        print (f"Σας απομενουν {rem} γευματα ")
+        eggs = int(input("\nAυγα: "))
+        food_type["eggs"] =eggs
+        rem -= eggs
     if (rem < 0 ):
-    print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
+        sys.exit()
     else :
-    print (f"Σας απομενουν {rem} γευματα ")
-    ladera = int(input("\nΛαδερα: "))
-    food_type["ladera"] =ladera
-    rem -= ladera
+        print (f"Σας απομενουν {rem} γευματα ")
+        ladera = int(input("\nΛαδερα: "))
+        food_type["ladera"] =ladera
+        rem -= ladera
     if (rem < 0 ):
-    print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
+        sys.exit()
     else :
-    print (f"Σας απομενουν {rem} γευματα ")
-    legumes = int(input("\nΟσπρια: "))
-    food_type["legumes"] =legumes
-    rem -= legumes
+        print (f"Σας απομενουν {rem} γευματα ")
+        legumes = int(input("\nΟσπρια: "))
+        food_type["legumes"] =legumes
+        rem -= legumes
     if (rem < 0 ):
-    print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
+        sys.exit()
     else :
-    print (f"Σας απομενουν {rem} γευματα ")
-    fish = int(input("\nΨαρι: "))
-    rem -= fish
-    food_type["fish"] =fish
+        print (f"Σας απομενουν {rem} γευματα ")
+        fish = int(input("\nΨαρι: "))
+        rem -= fish
+        food_type["fish"] =fish
     if (rem < 0 ):
-    print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
+        sys.exit()
     else :
-    print (f"Σας απομενουν {rem} γευματα ")
-    junk_food = int(input("\nJunk food:"))
-    rem -= junk_food
-    food_type["junk_food"] =junk_food
+        print (f"Σας απομενουν {rem} γευματα ")
+        junk_food = int(input("\nJunk food:"))
+        rem -= junk_food
+        food_type["junk_food"] =junk_food
     if (rem < 0 ):
-    print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
+        sys.exit()
     else :
-    print (f"Σας απομενουν {rem} γευματα ")
-    light_meal = int(input("\nΕλαφρύ γεύμα:"))
-    food_type["light_meal"] =light_meal
-    rem -= light_meal
+        print (f"Σας απομενουν {rem} γευματα ")
+        light_meal = int(input("\nΕλαφρύ γεύμα:"))
+        food_type["light_meal"] =light_meal
+        rem -= light_meal
     if (rem < 0 ):
-    print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε παραπάνω από 14 γεύματα για την βδομάδα")
+        sys.exit()
     else :
-    print (f"Σας απομενουν {rem} γευματα ")
+        print (f"Σας απομενουν {rem} γευματα ")
     if rem > 0 :
-    print("Δωσατε λιγοτερα  από 14 γεύματα για την βδομάδα")
-    sys.exit()
+        print("Δωσατε λιγοτερα  από 14 γεύματα για την βδομάδα")
+        sys.exit()
 
     for key, value in food_type.items():
         print(key, value)
