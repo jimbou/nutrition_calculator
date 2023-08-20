@@ -4,10 +4,12 @@ import re
 import sys
 
 pattern = r'[;|,]'
+food_type_lun ={}
+food_type_din ={}
 
 def choose_food_type():
     
-    food_type={}
+    
     print("Ποσες φορες θελετε να τρώτε ανα βδομαάδα τις παρακάτω κατηγορίες φαγητών, συνολο να ναι 14")
     print ("Κατηγοριες: Κοτοπουλο, Μοσχαρι, Μακαρονια, Οστρακοειδή, Aυγα, Λαδερα, Οσπρια, Ψαρι , Junk food , Ελαφρύ γεύμα")
     rem = 14
@@ -173,15 +175,68 @@ def find_foods(meals,calorie_goal,foods_not_liked , num_meals):
               num_meals = num_meals-1
               if (num_meals == 0): 
                 break #gia na dialegei mono ena fagito
+    return final_foods
               
 
     #print(final_foods) #ama dialegei mono ena fagito
 # Print the meal and amount
 
-def food_finder(calorie_goal,foods_not_liked, food_file, food_type):
-    #//calorie_goal = int(input("Enter your calorie goal: "))
+
+def split_lun_din(food_type):
+    turn ="lun"
+    food_type_lun = food_type
+    food_type_din =food_type
+    for key, value in food_type_lun.items():
+        food_type_lun[key]=0
+    for key, value in food_type_din.items():
+        food_type_din[key]=0
     
-    food_type = choose_food_type()
+
     for key, value in food_type.items():
-        find_foods(import_foods(food_file, key),calorie_goal,foods_not_liked,value)
+        rem= value
+        while(rem>0):
+            if (turn =="lun"):
+                food_type_lun[key] +=1
+                turn ="din"
+                rem -=1
+            elif (turn ="din"):
+                food_type_din[key] +=1
+                turn ="lun"
+                rem -=1
+
+
+def food_finder(calorie_goal,foods_not_liked, food_file):
+    food_type = choose_food_type()
+    split_lun_din(food_type)
+    breakfast_list =[]
+    snack_liat =[]
+    snack2_list =[]
+    lunch_list=[]
+    dinner_list=[]
+
+
+    if calorie_goal[0]!=0 :
+        print("Πρωινό : ")
+        breakfast_list =  food_finder(calorie_goal[0],foods_not_liked, "foods_new","breakfast",14)
+        #food_finder(calorie_goal[0],foods_not_liked, "foods_new","breakfast") #replace foods with breakfast
+    if calorie_goal[1]!=0 :
+        print("Δεκατιανό : ")
+        snack_list = food_finder(calorie_goal[1], foods_not_liked,"foods_new","snack",14)#replace foods with snack 1
+    if calorie_goal[2]!=0 :
+        print("Μεσημεριανό : ")
+        for key, value in food_type_lun.items():
+           lunch_list += food_finder(calorie_goal[2], foods_not_liked,"foods_new",key, value) #replace foods with lunch
+    if calorie_goal[3]!=0 :
+        print("Απογευματινό : ")
+        snack2_list = food_finder(calorie_goal[3], foods_not_liked,"foods_new",14) #replace snack 2 with breakfast
+    if calorie_goal[4]!=0 :
+        print("Βραδινό : ")
+         for key, value in food_type_din.items():
+           dinner_list += food_finder(calorie_goal[2], foods_not_liked,"foods_new",key, value) #replace foods with lunch
+    
+    print(f"breakfast : {breakfast_list}")
+    print(f"snack 1 : {snack_liat}")
+    print(f"lunch : {lunch_list}")
+    print(f"snack 2 : {snack2_list}")
+    print(f"dinner : {dinner_list}")
 
